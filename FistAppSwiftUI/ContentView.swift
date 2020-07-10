@@ -63,10 +63,10 @@ struct ContentView: View {
                  .cornerRadius(25)*/
                 
                 Button(action: {
-                    //                    action clic
+                    // action clic
                     Alert(title: Text("Tu texto es"), message: Text(self.emailValue), dismissButton: .default(Text("Ok")))
                     
-                }) { //() -> PrimitiveButtonStyleConfiguration.Label in
+                }) {
                     Text("Iniciar Sesión")
                         .fontWeight(.medium)
                         .padding(.all)
