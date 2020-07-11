@@ -32,6 +32,7 @@ struct ContentView: View {
     //Local Vars
     @State var emailValue: String = ""
     @State var passwordValue: String = ""
+    @State var changeTitle = false
     
     var body: some View {
         ScrollView{
@@ -64,8 +65,7 @@ struct ContentView: View {
                 
                 Button(action: {
                     // action clic
-                    Alert(title: Text("Tu texto es"), message: Text(self.emailValue), dismissButton: .default(Text("Ok")))
-                    
+                    self.changeTitle.toggle()
                 }) {
                     Text("Iniciar Sesión")
                         .fontWeight(.medium)
@@ -73,6 +73,15 @@ struct ContentView: View {
                         .background(Color.white.opacity(0.3))
                         .foregroundColor(Color.white)
                         .cornerRadius(25)
+                }
+                
+                if changeTitle {
+                    Text("Touch")
+                    .fontWeight(.medium)
+                    .padding(.all)
+                    .background(Color.white.opacity(0.3))
+                    .foregroundColor(Color.white)
+                    .cornerRadius(25)
                 }
             }
             .padding([.top, .leading, .trailing], 50)
